@@ -5,7 +5,7 @@ Installing osTicket , creating a ticket, assigning a ticket, resolving, respondi
 
 ## 📋 Objective
 
-A comprehensive demonstration of installing, configuring, and operating osTicket—a professional open-source ticketing system—on Windows Server with IIS, PHP, and MySQL. This project showcases complete infrastructure deployment, database administration, application configuration, and real-world support ticket workflows from both customer and staff perspectives.
+A comprehensive demonstration of installing, configuring, and operating osTicket, a professional open-source ticketing system on Windows Server with IIS, PHP, and MySQL. This project showcases complete infrastructure deployment, database administration, application configuration, and real-world support ticket workflows from both customer and staff perspectives.
 
 ***
 
@@ -26,9 +26,9 @@ A comprehensive demonstration of installing, configuring, and operating osTicket
 - Multi-tier web application installation and troubleshooting
 - Ticketing system operations and support workflows
 - Customer communication and professional issue documentation
-- Database-driven application deployment and configuration
+- Database driven application deployment and configuration
 - URL rewriting and web application routing
-- Linux/Windows interoperability through PHP and MySQL
+- Windows interoperability through PHP and MySQL
 
 ### 📊 Infrastructure & Capabilities Summary
 | Category | Technical Specification | Engineering Purpose |
@@ -111,11 +111,11 @@ Establish the foundational Windows Server infrastructure with IIS role installat
 *  ![IIS role CGI selected](https://github.com/techboulnp-gif/osTicket-Lab/blob/e0fdb262719220fd6d4a47751887e46b8559c164/Phase%201/1%20IIs%20role%20cgi%20selected.png)
 
 ### Step :two:: Verify IIS Default Web Site
-**Action:** Launch IIS Manager from Administrative Tools; navigate to Sites → Default Web Site and verify the site is started and running on port 80. Browse to http://localhost to confirm HTTP connectivity and that IIS is successfully serving the default welcome page, establishing baseline web server functionality.
+**Action:** Launch IIS Manager from Administrative Tools; navigate to Sites, Default Web Site and verify the site is started and running on port 80. Browse to http://localhost to confirm HTTP connectivity and that IIS is successfully serving the default welcome page, establishing baseline web server functionality.
 *  ![IIS default page localhost](https://github.com/techboulnp-gif/osTicket-Lab/blob/e0fdb262719220fd6d4a47751887e46b8559c164/Phase%201/2%20IIs%20default%20page%20localhost.png)
 
 ### Step :three:: Install URL Rewrite Module
-**Action:** Download and install the IIS URL Rewrite Module from Microsoft's download center. This module enables clean URL routing and rewrite rules in IIS, allowing osTicket to use user-friendly URLs instead of query parameters. Configure at the Default Web Site level to apply globally to all applications hosted on this server.
+**Action:** Download and install the IIS URL Rewrite Module from Microsoft's download center. This module enables clean URL routing and rewrite rules in IIS, allowing osTicket to use user friendly URLs instead of query parameters. Configure at the Default Web Site level to apply globally to all applications hosted on this server.
 *  ![URL Rewrite installed](https://github.com/techboulnp-gif/osTicket-Lab/blob/e0fdb262719220fd6d4a47751887e46b8559c164/Phase%201/3-url%20rewrite%20installed.png)
 
 ### Step :four:: Configure PHP Handler Mapping
@@ -125,10 +125,10 @@ Establish the foundational Windows Server infrastructure with IIS role installat
 ***
 
 ## Phase 2: Database & Application Installation
-Deploy MySQL 8.0 database server with dedicated osTicket user account and database, then execute the osTicket web-based installer to create the application configuration and admin account. Verify all PHP extensions load correctly and that database connectivity is established.
+Deploy MySQL 8.0 database server with dedicated osTicket user account and database, then execute the osTicket web based installer to create the application configuration and admin account. Verify all PHP extensions load correctly and that database connectivity is established.
 
 ### Step :one:: Create osTicket Database and User
-**Action:** Connect to MySQL 8.0 Command Line Client using root credentials. Execute SQL commands to: (1) CREATE DATABASE osticket with UTF-8 character set and collation for international support, (2) CREATE USER 'osticketuser'@'localhost' with a strong password, (3) GRANT ALL PRIVILEGES on osticket.* to osticketuser, (4) FLUSH PRIVILEGES to apply changes. This establishes the database layer with principle-of-least-privilege access control for the application.
+**Action:** Connect to MySQL 8.0 Command Line Client using root credentials. Execute SQL commands to: (1) CREATE DATABASE osticket with UTF 8 character set and collation for international support, (2) CREATE USER 'osticketuser'@'localhost' with a strong password, (3) GRANT ALL PRIVILEGES on osticket.* to osticketuser, (4) FLUSH PRIVILEGES to apply changes. This establishes the database layer with principle-of-least-privilege access control for the application.
 *  ![Database created, user granted](Phase%202/1%20database%20created%20user%20granted.png)
 
 ### Step :two:: Run osTicket Installer Prerequisites Check
@@ -142,10 +142,10 @@ Deploy MySQL 8.0 database server with dedicated osTicket user account and databa
 ***
 
 ## Phase 3: Customer Ticket Submission (Public Interface)
-Demonstrate the customer-facing Support Center workflow where end-users access the public ticketing interface, submit support requests with detailed issue information, and receive immediate confirmation of ticket creation. This shows the customer perspective of the ticketing system.
+Demonstrate the customer facing Support Center workflow where end users access the public ticketing interface, submit support requests with detailed issue information, and receive immediate confirmation of ticket creation. This shows the customer perspective of the ticketing system.
 
 ### Step :one:: Access Support Center Homepage
-**Action:** Navigate to http://localhost/osTicket/ (the public support center) in a web browser. This page displays a welcome message explaining how the ticketing system works, provides ticket submission capability through "Open a New Ticket" button, and offers "Check Ticket Status" feature for customers to track their existing tickets. This is the entry point for all end-users seeking support.
+**Action:** Navigate to http://localhost/osTicket/ (the public support center) in a web browser. This page displays a welcome message explaining how the ticketing system works, provides ticket submission capability through "Open a New Ticket" button, and offers "Check Ticket Status" feature for customers to track their existing tickets. This is the entry point for all end users seeking support.
 *  ![Support center homepage](https://github.com/techboulnp-gif/osTicket-Lab/blob/e0fdb262719220fd6d4a47751887e46b8559c164/Phase%203/1%20%20support%20center%20homepage.png)
 
 ### Step :two:: Submit Ticket via Form
@@ -162,7 +162,7 @@ Demonstrate the customer-facing Support Center workflow where end-users access t
 Demonstrate the staff-side administrative workflow where support team members access the Admin Panel (SCP), review incoming tickets in the open queue, assign tickets to appropriate staff members, compose professional responses, and resolve tickets. This shows the complete operational management of the ticketing system from staff perspective.
 
 ### Step :one:: View Ticket in Admin Queue
-**Action:** Log into the Admin Panel (Staff Control Panel) at http://localhost/osTicket/scp using admin credentials (username: techboul, password). Navigate to Tickets → Open to view all unresolved tickets. The newly submitted customer ticket (Ticket #659759) appears in the queue with columns showing: Ticket Number, Last Updated timestamp, Subject line, From (customer name), Priority level, and Assigned To status. This queue is the primary interface for staff to manage incoming work.
+**Action:** Log into the Admin Panel (Staff Control Panel) at http://localhost/osTicket/scp using admin credentials (username: techboul, password). Navigate to Tickets, Open to view all unresolved tickets. The newly submitted customer ticket (Ticket #659759) appears in the queue with columns showing: Ticket Number, Last Updated timestamp, Subject line, From (customer name), Priority level, and Assigned To status. This queue is the primary interface for staff to manage incoming work.
 *  ![Ticket in admin queue](Phase%204/1%20ticket%20in%20admin%20queue.png)
 
 ### Step :two:: Review Complete Ticket Details
